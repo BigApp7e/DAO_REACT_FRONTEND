@@ -1,38 +1,280 @@
 .App {
+  width: 100vw;
+  height: 100vh;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App > div{
+  min-width: 1000px;
+  min-height: 600px;
+  border: 5px solid #0e6d55;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.top-images-holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.top-images-holder > div{
+  float: left;
+  width: 200px;
+  height: 300px;
+  border: 1px solid darkgrey;
+}
+.top-images-holder > div:last-of-type{
+  flex-grow: 2;
+}
+.fullDeckImg{
+  width: 500px;
+  height: 300px;
+}
+.radio-buttons-holder{
+  margin-top: 20px;
+}
+.btn-and-txt-area-holder{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px;
+}
+.playBtn{
+  width: 130px;
+  height: 50px;
+}
+.textArea{
+  width: 1000px ;
+  height: 400px;
+}
+.alert-holder{
+  width: 400px;
+  height: 300px;
+  background-color: bisque;
+}
+
+/*Alert */
+.alert-container{
+  position: relative;
+  z-index: 3;
+}
+.alert-holder{
+  position: fixed;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 250px;
+  border: 1px solid black;
+  background-color: #fff;
+  border-radius: 10px;
+
+}
+.text-holder
+{
+  position: absolute;
+  width: 500px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.text-holder p{
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.empty-popup-div{
+  position: relative;
+  z-index: 2;
+}
+.popup-box{
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0,0,0,0.5);
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup-box-inside
+{
+  width: 600px;
+  overflow: auto;
+  background-color: #fff;
+  border: 1px solid #999;
+  border-radius: 25px;
+  align-self: center;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction:column;
+
+}
+.popup-header
+{
+  border-radius: 25px 25px 0px 0px;
+  background-color:cornflowerblue;
+  height: 50px;
+  line-height: 50px;
   color: white;
+  font-weight: bold;
+  width: 600px;
 }
-
-.App-link {
-  color: #61dafb;
+.popup-header-title
+{
+  float: left;
+  font-weight: bold;
+  color: #fff;
+  line-height: 50px;
+  margin-left: 20px;
 }
+.popup-btn-close
+{
+  position: relative;
+  z-index: 1;
+  float: right;
+}
+.flex-two-columns
+{
+  display: flex;
+  gap: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.flex-two-columns div{
+  flex: 1;
+}
+.field-label
+{  
+  font-size: 1em;
+  line-height: 2em;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+}
+.field-text-input{
+  width: 100%;
+  height: 2em;
+
+}
+.popup-transport-text-area
+{
+
+  width:100%;
+  height: 150px;
+  resize: none;
+
+
+}
+.popup-save-btn-holder
+{
+  line-height: 2em;
+  margin: 10px;
+  text-align: center;
+}
+.popup-transport-save-btn
+{
+  height: 2em;
+}
+/*HOUSING*/
+.flex-one-columns{
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  flex-direction: column;
+  margin: 0;
+}
+@media only screen and (max-width: 600px) 
+{
+  .popup-box-inside
+  {
+  
+      width: 90vw;
+      overflow: auto;
+      background-color: #fff;
+      border: 1px solid #999;
+      border-radius: 25px;
+      align-self: center;
+      margin: 0 auto;
+  
+      display: flex;
+      flex-direction:column;
+  
   }
-  to {
-    transform: rotate(360deg);
+  .popup-header
+  {
+      border-radius: 25px 25px 0px 0px;
+      background-color:cornflowerblue;
+      height: 50px;
+      line-height: 50px;
+      color: white;
+      font-weight: bold;
+      width: 90vw;
+  }
+  .popup-header-title
+  {
+      float: left;
+      font-weight: bold;
+      color: #fff;
+      line-height: 50px;
+      margin-left: 20px;
+  }
+  .popup-btn-close
+  {
+      float: right;
+  }
+  .flex-two-columns
+  {
+      display: flex;
+      gap: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+  }
+  .flex-two-columns div{
+      flex: 1;
+  }
+  .field-label
+  {  
+      font-size: 1em;
+      line-height: 2em;
+  
+  }
+  .field-text-input{
+      width: 100%;
+      height: 2em;
+  
+  }
+  .popup-transport-text-area
+  {
+  
+      width:100%;
+      height: 150px;
+      resize: none;
+  
+  
+  }
+  .popup-save-btn-holder
+  {
+      line-height: 2em;
+      margin: 10px;
+      text-align: center;
+  }
+  .popup-transport-save-btn
+  {
+      height: 2em;
+  }
+  .flex-one-columns{
+      display: flex;
+      padding-left: 20px;
+      padding-right: 20px;
+      flex-direction: column;
+      margin: 0;
   }
 }
